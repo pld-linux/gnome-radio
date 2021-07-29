@@ -1,19 +1,20 @@
 Summary:	Public radio mapping application for GNOME
 Summary(pl.UTF-8):	Aplikacja z mapą publicznych stacji radiowych dla GNOME
 Name:		gnome-radio
-Version:	0.2.0
+Version:	0.4.0
 Release:	1
 License:	GPL v3
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-radio/0.2/%{name}-%{version}.tar.xz
-# Source0-md5:	cc28d76e76c088661a045e7dbe2f2673
+Source0:	https://download.gnome.org/sources/gnome-radio/0.4/%{name}-%{version}.tar.xz
+# Source0-md5:	7e8f4954584963510522f33293e06d5d
 URL:		https://wiki.gnome.org/Apps/Radio
 BuildRequires:	autoconf >= 2.69
-BuildRequires:	automake
+BuildRequires:	automake >= 1:1.11
 BuildRequires:	gstreamer-devel >= 1.0
 BuildRequires:	gstreamer-plugins-bad-devel >= 1.0
 BuildRequires:	gstreamer-plugins-base-devel >= 1.0
 BuildRequires:	gtk+3-devel >= 3.22.30
+BuildRequires:	intltool >= 0.50.1
 BuildRequires:	libchamplain-devel >= 0.12.10
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.596
@@ -52,10 +53,15 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+%find_lang %{name}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
+%files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_bindir}/gnome-radio
+%{_datadir}/metainfo/gnome-radio.appdata.xml
+%{_desktopdir}/gnome-radio.desktop
+%{_iconsdir}/hicolor/scalable/apps/gnome-radio.svg
