@@ -1,12 +1,13 @@
 Summary:	Public radio mapping application for GNOME
 Summary(pl.UTF-8):	Aplikacja z mapą publicznych stacji radiowych dla GNOME
 Name:		gnome-radio
-Version:	16.0.43
+# NOTE: 42.0 is newer than 43.0 and 44.0; next version will be 45.x, but 45.0 looks develish
+Version:	42.0
 Release:	1
 License:	GPL v3
 Group:		X11/Applications
-Source0:	https://download.gnome.org/sources/gnome-radio/16.0/%{name}-%{version}.tar.xz
-# Source0-md5:	76acc3965f42d93a36ade8429f9f3c2f
+Source0:	https://download.gnome.org/sources/gnome-radio/42/%{name}-%{version}.tar.xz
+# Source0-md5:	ea01dbce0c7ae8e28c44d5ca10278841
 URL:		https://wiki.gnome.org/Apps/Radio
 BuildRequires:	autoconf >= 2.69
 BuildRequires:	automake >= 1:1.11
@@ -17,7 +18,7 @@ BuildRequires:	glib2-devel >= 1:2.38.0
 BuildRequires:	gstreamer-devel >= 1.0
 BuildRequires:	gstreamer-plugins-bad-devel >= 1.0
 BuildRequires:	gstreamer-plugins-base-devel >= 1.0
-BuildRequires:	gtk+3-devel >= 3.24.23
+BuildRequires:	gtk+3-devel >= 3.24.34
 BuildRequires:	gtk-doc >= 1.16
 BuildRequires:	intltool >= 0.50.1
 BuildRequires:	libchamplain-devel >= 0.12.10
@@ -35,7 +36,7 @@ Requires:	glib2 >= 1:2.38.0
 Requires:	gstreamer-plugins-bad >= 1.0
 Requires:	gstreamer-plugins-base >= 1.0
 Requires:	gstreamer-plugins-good >= 1.0
-Requires:	gtk+3 >= 3.24.23
+Requires:	gtk+3 >= 3.24.34
 Requires:	hicolor-icon-theme
 Requires:	libchamplain >= 0.12.10
 Requires:	pango >= 1:0.28
@@ -80,7 +81,9 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_bindir}/gnome-internet-radio-locator
 %attr(755,root,root) %{_bindir}/gnome-radio
+%attr(755,root,root) %{_bindir}/org.gnome.Radio
 %{_datadir}/gnome-radio
+%{_datadir}/org.gnome.radio
 %{_datadir}/metainfo/gnome-radio.appdata.xml
 %{_desktopdir}/gnome-radio.desktop
 %{_iconsdir}/hicolor/scalable/apps/gnome-radio.svg
