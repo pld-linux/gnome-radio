@@ -1,12 +1,12 @@
 Summary:	Public radio mapping application for GNOME
 Summary(pl.UTF-8):	Aplikacja z mapą publicznych stacji radiowych dla GNOME
 Name:		gnome-radio
-Version:	46.0
+Version:	47.0
 Release:	1
 License:	GPL v3
 Group:		X11/Applications
-Source0:	https://download.gnome.org/sources/gnome-radio/46/%{name}-%{version}.tar.xz
-# Source0-md5:	1f4c7b0d54906ddebd1e9b2fb23aff00
+Source0:	https://download.gnome.org/sources/gnome-radio/47/%{name}-%{version}.tar.xz
+# Source0-md5:	b269f4948c927191bf0a2939d3963e24
 URL:		https://wiki.gnome.org/Apps/Radio
 BuildRequires:	autoconf >= 2.69
 BuildRequires:	automake >= 1:1.11
