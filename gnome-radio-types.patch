@@ -1,0 +1,25 @@
+--- gnome-radio-64.0/src/gnome-radio-location.c.orig	2022-11-09 11:17:03.000000000 +0100
++++ gnome-radio-64.0/src/gnome-radio-location.c	2025-08-31 13:52:22.398626358 +0200
+@@ -190,7 +190,7 @@ void location_main (ChamplainView *view)
+         gdouble altitude, speed, heading;
+ 	gclue_simple_new ("gnome-radio",
+ 			  accuracy_level,
+-			  time_threshold,
++			  NULL,
+ 			  on_simple_ready,
+ 			  CHAMPLAIN_VIEW (view));
+ 	return;
+--- gnome-radio-64.0/src/gnome-radio-streams.h.orig	2025-08-31 14:27:09.210654461 +0200
++++ gnome-radio-64.0/src/gnome-radio-streams.h	2025-08-31 14:28:53.330090397 +0200
+@@ -34,9 +34,9 @@ struct _GNOMERadioStreamsInfo {
+ 	gchar *mimetype;
+ 	gchar *uri;
+ 	gchar *codec;
+-	gchar *samplerate;
++	glong samplerate;
+ 	gchar *streams;
+-	gchar *bitrate;
++	glong bitrate;
+ 	/* GNOMERadioChannels channels; */
+ 	GNOMERadioEncoderInfo *encoder;
+ 	GNOMERadioStreamsInfo *next;
